@@ -48,12 +48,14 @@ for ( let index = 0; index < images.length ; index++ ) {
            
 }
 
-buttonNext.addEventListener('click', function() {
-    imgLandscape[activeElement].classList.remove('active');
+document.querySelectorAll('.ms_carou-img-cont img');
 
-    activeElement++;
+// buttonNext.addEventListener('click', function() {
+//     imgLandscape[activeElement].classList.remove('active');
 
-    if (activeElement === imgLandascape.length){
-        activeElement = 0;
-    }
-});
+//     activeElement++;
+
+//     if (activeElement === imgLandascape.length){
+//         activeElement = 0;
+//     }
+// });
