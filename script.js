@@ -23,7 +23,7 @@ images = [
     ];
 
 const imgContainer = document.querySelector('div.ms_carou-img-cont');
-const imgList = imgContainer.children;
+
 
 console.log(imgContainer);
 
@@ -33,8 +33,7 @@ for ( let index = 0; index < images.length ; index++ ) {
     const imgLandscape = document.createElement('img');
     imgLandscape.classList.add('w-100')
     imgLandscape.setAttribute('src', images[index]);
-    
-    
+        
     imgContainer.append(imgLandscape);                
 
 }
