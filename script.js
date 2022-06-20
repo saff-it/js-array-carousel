@@ -34,14 +34,14 @@ for ( let index = 0; index < images.length ; index++ ) {
     imgLandscape.classList.add('w-100');
     imgLandscape.setAttribute('src', images[index]);
 
-    if (index == 0){
+    if (index == 0) {
         imgLandscape.classList.add('active');
-        
+        imgLandscape.innerHTML = index;
 
-    } else {
-        imgLandscape.classList.remove('active');
+    } else if (!index ==0) {
+        imgLandscape.classList.add('d-none');
 
-    }
+    }  
                 
     imgContainer.append(imgLandscape);      
     
