@@ -23,20 +23,28 @@ images = [
     ];
 
 const imgContainer = document.querySelector('div.ms_carou-img-cont');
-let activeIndex = 1;
+
 
 console.log(imgContainer);
 
 for ( let index = 0; index < images.length ; index++ ) {
     console.log(images[index]);
 
-    const imgLandscape = document.createElement('img');
+    let imgLandscape = document.createElement('img');
     imgLandscape.classList.add('w-100');
     imgLandscape.setAttribute('src', images[index]);
+
+    if (index == 0){
+        imgLandscape.classList.add('active');
         
+
+    } else {
+        imgLandscape.classList.remove('active');
+
+    }
+                
     imgContainer.append(imgLandscape);      
     
-    imgLandscape[activeIndex].classList.add('d-block');
-
+       
 }
 
