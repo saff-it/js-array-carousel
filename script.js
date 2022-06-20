@@ -23,7 +23,8 @@ images = [
     ];
 
 const imgContainer = document.querySelector('div.ms_carou-img-cont');
-
+const buttonNext = document.querySelector('ms_btn-next');
+let activeElement = 1;
 
 console.log(imgContainer);
 
@@ -44,7 +45,15 @@ for ( let index = 0; index < images.length ; index++ ) {
     }  
                 
     imgContainer.append(imgLandscape);      
-    
-       
+           
 }
 
+buttonNext.addEventListener('click', function() {
+    imgLandscape[activeElement].classList.remove('active');
+
+    activeElement++;
+
+    if (activeElement === imgLandascape.length){
+        activeElement = 0;
+    }
+});
