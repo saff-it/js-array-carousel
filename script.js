@@ -32,8 +32,8 @@ for ( let index = 0; index < images.length ; index++ ) {
 
     const imgLandscape = document.createElement('img');
     imgLandscape.classList.add('w-100')
-    imgLandscape.setAttribute('src', 'https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg')
-    imgLandscape.innerHTML = images[index];
+    imgLandscape.setAttribute('src', images[index]);
+    
     
     imgContainer.append(imgLandscape);                
 
