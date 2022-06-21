@@ -23,8 +23,9 @@ images = [
     ];
 
 const imgContainer = document.querySelector('div.ms_carou-img-cont');
-const buttonNext = document.querySelector('ms_btn-next');
-let activeElement = 1;
+const buttonNext = document.querySelector('.ms_btn-next');
+const buttonPrev = document.querySelector('.ms_btn-prev');
+let activeElement = 0;
 
 console.log(imgContainer);
 
@@ -35,12 +36,8 @@ for ( let index = 0; index < images.length ; index++ ) {
     imgLandscape.classList.add('w-100');
     imgLandscape.setAttribute('src', images[index]);
 
-    if (index == 0) {
+    if (index == activeElement) {
         imgLandscape.classList.add('active');
-        imgLandscape.innerHTML = index;
-
-    } else if (!index ==0) {
-        imgLandscape.classList.add('d-none');
 
     }  
                 
@@ -48,14 +45,30 @@ for ( let index = 0; index < images.length ; index++ ) {
            
 }
 
-document.querySelectorAll('.ms_carou-img-cont img');
+const imageList = document.querySelectorAll('.ms_carou-img-cont img');
 
-// buttonNext.addEventListener('click', function() {
-//     imgLandscape[activeElement].classList.remove('active');
+buttonNext.addEventListener('click', function() {
+    imageList[activeElement].classList.remove('active');
 
-//     activeElement++;
+    activeElement++;
 
-//     if (activeElement === imgLandascape.length){
-//         activeElement = 0;
-//     }
-// });
+    if (activeElement === imageList.length){
+        activeElement = 0;
+    }
+
+    imageList[activeElement].classList.add('active');
+
+});
+
+buttonPrev.addEventListener('click', function() {
+    imageList[activeElement].classList.remove('active');
+
+    activeElement--;
+
+    if (activeElement === -1){
+        activeElement = imageList.length -1;
+    }
+
+    imageList[activeElement].classList.add('active');
+
+});
